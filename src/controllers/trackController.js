@@ -29,6 +29,7 @@ exports.getTrackedData = async (req, res) => {
         </head>
         <body>
           <h1>Tracked Data</h1>
+          <p>Go to <a href="/">Home</a> </p>
           <table border="1">
             <tr>
               <th>URL</th>
