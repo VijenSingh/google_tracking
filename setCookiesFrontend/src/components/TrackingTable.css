@@ -1,0 +1,35 @@
+.tracking-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.tracking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tracking-table th, .tracking-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.tracking-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.tracking-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tracking-table tr:hover {
+  background-color: #ddd;
+}
+
+.tracking-table th, .tracking-table td {
+  max-width: 200px; /* Adjust max width as needed */
+}

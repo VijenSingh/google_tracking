@@ -1,3 +1,5 @@
+//src/middleware/corsMiddleware.js
+
 const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
