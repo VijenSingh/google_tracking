@@ -6,8 +6,6 @@ import LoginPage from '../src/components/LoginPage'; // Assuming you have a logi
 import Navbar from './components/Navbar';
 
 const isAuthenticated = () => {
-  // Implement your authentication logic here
-  // For example, check if the user is logged in and has admin rights
   return localStorage.getItem('isAdmin') === 'true';
 };
 

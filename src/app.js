@@ -10,7 +10,10 @@ app.use(bodyParser.json());
 app.use(corsMiddleware);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
 // Routes
 app.use('/track', trackRoutes);
 
 module.exports = app;
+
+
