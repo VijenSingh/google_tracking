@@ -1,16 +1,16 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config();
 
-const mongoURI = process.env.MONGODB_URI;
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
+const { DynamoDBDocumentClient } = require('@aws-sdk/lib-dynamodb');
+require('dotenv').config();
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000,
-  socketTimeoutMS: 45000
-})
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log('MongoDB connection error:', err));
+const client = new DynamoDBClient({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  }
+});
 
-module.exports = mongoose;
+const dynamoDb = DynamoDBDocumentClient.from(client);
+
+module.exports = dynamoDb;
